@@ -1,0 +1,37 @@
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.galTitleBg {
+  position: relative; /* Nécessaire pour positionner l'overlay */
+  border-radius: 1px;
+  width: auto;
+  height: 223px;
+}
+
+.bg {
+  width: 100%; /* L'image prendra toute la largeur du conteneur parent */
+  height: 100%; /* L'image remplira la hauteur définie par le parent */
+  object-fit: cover; /* Permet d'adapter l'image au conteneur sans la déformer */
+  border-radius: 1px;
+}
+
+.textOverlay {
+  position: absolute; /* Pour superposer le texte */
+  top: 50%; /* Position verticale centrée */
+  left: 50%; /* Position horizontale centrée */
+  transform: translate(-50%, -50%); /* Ajuste pour centrer parfaitement */
+  font-family: Montserrat, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 68.45px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  padding: 1rem; /* Espace autour du texte */
+}
