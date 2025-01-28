@@ -12,9 +12,8 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         additionalData: `
-          @import "@/styles/variables.scss";
-          @import "@/styles/mixins.scss";
-          @import "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap";
+          @use "@/styles/variables.scss" as vars;
+          @use "@/styles/mixins.scss" as mixins;
         `,
       },
     },

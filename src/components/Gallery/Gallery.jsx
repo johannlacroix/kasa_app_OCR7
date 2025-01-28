@@ -4,6 +4,7 @@ const Gallery = () => {
   return (
     <div className={styles.container}>
       <div className={styles.galTitleBg}>
+        <div className={styles.overlay}></div> {/* L'overlay sombre */}
         <img src="/gallery_title_bg.png" alt="Logo" className={styles.bg} />
         <div className={styles.textOverlay}>Chez vous, partout et ailleurs</div>
       </div>

@@ -1,19 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import NotFound from "./pages/NotFound";
+import Router from "./Router";
 
-const AppRouter = () => {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        {/* Route 404 pour les URL invalides */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
-  );
+const App = () => {
+  return <Router />;
 };
 
-export default AppRouter;
+export default App;
+//
