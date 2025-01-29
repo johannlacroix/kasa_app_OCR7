@@ -4,47 +4,10 @@
   padding: 2rem;
 }
 
-.galTitleBg {
-  position: relative;
-  width: auto;
-  height: 223px;
-}
-
-.bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Couleur noire avec transparence */
-  border-radius: 20px; /* Assure-toi que ça correspond au border-radius de .galTitleBg */
-  z-index: 1; /* Assure que l'overlay soit en dessous du texte */
-}
-
-.textOverlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: Montserrat, sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: normal;
-  text-align: center;
-  white-space: nowrap;
-  padding: 1rem;
-  z-index: 2; /* Texte au-dessus de l'overlay */
-  color: #ffffff; /* Assure que le texte reste visible */
-}
-
 .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 colonnes de taille égale
+  gap: 20px; // Espacement entre les cards
   width: 100%;
   height: 100%;
   object-fit: cover;
