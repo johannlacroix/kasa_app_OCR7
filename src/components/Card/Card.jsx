@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import styles from "./Card.module.scss";
 
 const Card = ({ annonce }) => {
@@ -10,6 +11,14 @@ const Card = ({ annonce }) => {
       <h3>{annonce.title}</h3>
     </div>
   );
+};
+
+// Validation des props
+Card.propTypes = {
+  annonce: PropTypes.shape({
+    cover: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Card;
