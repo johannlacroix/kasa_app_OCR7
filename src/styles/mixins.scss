@@ -1,0 +1,25 @@
+@use "variables";
+
+// Mixin pour le mode clair
+@mixin light-mode {
+  $text-dark: #333; // Remplacer après
+  :root {
+    color: variables.$text-dark; // Modifié pour référencer "variables"
+    background-color: variables.$bg-light; // Modifié pour référencer "variables"
+  }
+
+  a:hover {
+    color: lighten(
+      variables.$primary-color,
+      10%
+    ); // Modifié pour référencer "variables"
+  }
+
+  button {
+    background-color: variables.$button-bg-light; // Modifié pour référencer "variables"
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  @include light-mode;
+}

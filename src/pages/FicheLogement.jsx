@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "../styles/index.scss"; // Import des styles globaux pour tester
 
 const FicheLogement = () => {
   const { id } = useParams();
@@ -32,14 +33,18 @@ const FicheLogement = () => {
       });
   }, [id]);
 
-  if (loading) return <p>Chargement...</p>;
-  if (error) return <p>{error}</p>;
+  if (loading) return <p className="loading">Chargement...</p>;
+  if (error) return <p className="error">{error}</p>;
 
   return (
-    <div>
-      <h1>{logement.title}</h1>
-      <p>{logement.description}</p>
-      {/* Affiche plus d'infos ici */}
+    <div className="fiche-logement">
+      <h1 className="titre">{logement.title}</h1>
+      <img
+        className="image-logement"
+        src={logement.cover}
+        alt={logement.title}
+      />
+      <p className="description">{logement.description}</p>
     </div>
   );
 };
