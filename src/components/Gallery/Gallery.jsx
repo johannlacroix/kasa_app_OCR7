@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import styles from "./Gallery.module.scss";
 import Banner from "../Banner/Banner";
 import Card from "../Card/Card";
+import { NavLink } from "react-router-dom";
 
 const Gallery = () => {
+  console.log("Gallery est monté !");
   const [annonces, setAnnonces] = useState([]);
 
   useEffect(() => {
@@ -14,7 +16,10 @@ const Gallery = () => {
         }
         return response.json();
       })
-      .then((data) => setAnnonces(data))
+      .then((data) => {
+        console.log("Annonces chargées :", data); // <-- Vérification
+        setAnnonces(data);
+      })
       .catch((error) =>
         console.error("Erreur de chargement des données :", error)
       );
@@ -24,11 +29,16 @@ const Gallery = () => {
     <div className={styles.container}>
       <Banner />
 
-      {/* Grid contenant toutes les Cards */}
       <div className={styles.gallery}>
-        {annonces.map((annonce) => (
-          <Card key={annonce.id} annonce={annonce} />
-        ))}
+        {annonces.length === 0 ? (
+          <p>Aucune annonce disponible.</p>
+        ) : (
+          annonces.map((annonce) => (
+            <NavLink to={`/logement/${annonce.id}`} key={annonce.id}>
+              <Card annonce={annonce} />
+            </NavLink>
+          ))
+        )}
       </div>
     </div>
   );
