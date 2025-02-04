@@ -1,4 +1,5 @@
 @use "variables";
+@use "sass:color";
 
 // Mixin pour le mode clair
 @mixin light-mode {
@@ -9,10 +10,7 @@
   }
 
   a:hover {
-    color: lighten(
-      variables.$primary-color,
-      10%
-    ); // Modifié pour référencer "variables"
+    color: color.adjust(variables.$primary-color, $lightness: 10%);
   }
 
   button {

@@ -8,9 +8,12 @@ const Card = ({ annonce }) => {
   }
   return (
     <div className={styles.card}>
+      <div className={styles.background}></div>
+
       <div className={styles.imageContainer}>
         <img src={annonce.cover} alt={annonce.title} />
       </div>
+
       <h2>{annonce.title}</h2>
     </div>
   );

@@ -1,57 +1,64 @@
 .card {
   position: relative;
-  background: #ff6060;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
-  color: white;
-  aspect-ratio: 1 / 1; // Assure que la carte est carrée
-
+  aspect-ratio: 1 / 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; // Garde le texte en bas
+  justify-content: space-between;
 
-  h3 {
-    font-size: 1.2em;
-    position: relative;
-    z-index: 2; // Pour être au-dessus du dégradé
-    margin: 10px 0 0 0; // Assure un petit espace entre l'image et le texte
-  }
-
-  &::after {
-    content: "";
+  /* Nouveau fond indépendant */
+  .background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 96, 96, 0) 0%,
-      rgba(200, 50, 50, 0.3) 50%,
-      rgba(100, 20, 20, 0.6) 100%
-    );
+    background: #ff6060;
     border-radius: inherit;
-    pointer-events: none;
-    z-index: 0; // Doit être sous le texte mais au-dessus de l’image
+
+    /* Ajout du dégradé */
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 96, 96, 0) 0%,
+        rgba(200, 50, 50, 0.3) 50%,
+        rgba(100, 20, 20, 0.6) 100%
+      );
+      border-radius: inherit;
+      pointer-events: none;
+    }
   }
-}
 
-.imageContainer {
-  position: relative;
-  width: 100%;
-  flex-grow: 1; // Fait en sorte que l'image prenne tout l'espace disponible
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 1;
-
-  img {
+  .imageContainer {
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: cover; // Recadre les images larges
-    object-position: center;
-    display: block;
+    flex-grow: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+  }
+
+  h2 {
+    position: relative;
+    z-index: 2; /* Au-dessus du fond */
+    color: white;
   }
 }
