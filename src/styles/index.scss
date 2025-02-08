@@ -1,140 +1,187 @@
-@use "@/styles/variables" as variables; // Import variables globales
+@use "@/styles/variables" as variables;
 @use "sass:color";
 
-// variables locales
-$primary-color: #646cff;
-$primary-hover: #535bf2;
+// Variables
+$primary-color: #ff6060;
 $bg-dark: black;
 $bg-light: #ffffff;
 $text-dark: #213547;
 $text-light: rgba(255, 255, 255, 0.87);
-$button-bg-dark: #1a1a1a;
-$button-bg-light: #f9f9f9;
 
-// Importation des polices Google
+// Import Google Fonts
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 :root {
   --font-family: "Montserrat", sans-serif;
-  --font-size: 1em;
   --primary-color: #{$primary-color};
-  --primary-hover: #{$primary-hover};
-  --text-color: #{$text-light};
-  --bg-color: #{$bg-dark};
-
+  --text-color: #{$text-dark};
+  --bg-color: #{$bg-light};
   font-family: var(--font-family);
-  font-size: var(--font-size);
-  color: var(--text-color);
-  background-color: var(--bg-color);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: $primary-color;
-  text-decoration: inherit;
-
-  &:hover {
-    color: $primary-hover;
-  }
 }
 
 body {
-  width: 1440px;
-  height: auto;
-  padding-top: 45px;
-  gap: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background: $bg-light;
-  position: relative;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: $button-bg-dark;
-  cursor: pointer;
-  transition: border-color 0.25s;
-
-  &:hover {
-    border-color: $primary-color;
-  }
-
-  &:focus,
-  &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
-}
-
-// Mixin mode clair
-@mixin light-mode {
-  :root {
-    color: $text-dark;
-    background-color: $bg-light;
-  }
-
-  a:hover {
-    color: color.adjust(variables.$primary-color, $lightness: 10%);
-  }
-
-  button {
-    background-color: $button-bg-light;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  @include light-mode;
+  color: $text-dark;
 }
 
 .fiche-logement {
-  max-width: 800px;
+  max-width: 1240px;
   margin: 40px auto;
   padding: 20px;
-  background: #f8f8f8;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
-
-  .titre {
-    color: #ff6060;
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-
-  .image-logement {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-
-  .description {
-    font-size: 1.2rem;
-    color: #333;
-  }
 }
 
-.loading {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #ff6060;
+.image-logement {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
-.error {
-  text-align: center;
-  font-size: 1.5rem;
-  color: red;
+.titre {
+  color: $primary-color;
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.location {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.tag {
+  background: $primary-color;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+.host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.host-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.host-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.stars {
+  display: flex;
+  gap: 5px;
+  color: #e3e3e3;
+}
+
+.star-filled {
+  color: $primary-color;
+}
+
+.collapse {
+  background: #f6f6f6;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.collapse-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapse-content {
+  display: none;
+  padding-top: 10px;
+}
+
+.collapse.open .collapse-content {
+  display: block;
+}
+
+.collapse-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev img,
+.next img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel {
+  position: relative; // Permet aux éléments enfants absolus de se positionner par rapport à lui
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.leftArrow {
+  left: 20px; // Ajuste la position par rapport au bord gauche
+}
+
+.rightArrow {
+  right: 20px; // Ajuste la position par rapport au bord droit
+}
+.logement-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }

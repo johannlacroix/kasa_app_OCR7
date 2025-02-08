@@ -1,6 +1,7 @@
-.galTitleBg {
+.banner {
   position: relative;
-  width: auto;
+  width: 100%;
+  max-width: 1240px; // Largeur conforme à Figma
   height: 223px;
   box-shadow: #f6f6f6;
 }

@@ -1,18 +1,31 @@
 .collapse {
-  width: 1023px; // Par défaut (large)
-  border-radius: 5px;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
+  width: 100%;
+  max-width: 494px; // Assure la largeur exacte de chaque Collapse
+  height: 100%;
+}
 
-  &.small {
-    width: 582px;
-  }
+.collapseContainer {
+  width: 100%;
+  max-width: 1023px; // Respecte la largeur max définie dans Figma
 
-  &.open {
-    width: 534px;
-    background: #000000;
-    border-radius: 10px 10px 5px 5px;
-  }
+  height: auto; // S’adapte au contenu
+  max-height: 298px; // Respecte la hauteur max définie
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Centre horizontalement les enfants (les collapses)
+  justify-content: center; // Centre si besoin verticalement aussi
+
+  gap: 30px; // Espacement entre les collapses
+
+  margin: 0 auto; // Centre le conteneur sur la page
+  padding: 10px;
+}
+
+.parentWrapper {
+  display: flex;
+  justify-content: center; // Centre le `collapseContainer`
+  width: 100%;
 }
 
 .header {
@@ -22,7 +35,7 @@
   justify-content: space-between;
   align-items: center;
   font-family: Montserrat, sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   color: white;
   border-radius: 5px;

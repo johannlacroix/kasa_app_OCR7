@@ -2,7 +2,6 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./Collapse.module.scss";
 import { ChevronDown, ChevronUp } from "lucide-react"; // Icônes de flèche
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const Collapse = ({ title, content, size = "large" }) => {
   const [isOpen, setIsOpen] = useState(false);

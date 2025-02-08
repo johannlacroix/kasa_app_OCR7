@@ -1,9 +1,15 @@
-// Button/Button.jsx
-import React from "react";
-import "./Button.scss";
+import styles from "./Button.module.scss";
 
-function Button({ label }) {
-  return <button className="button">{label}</button>;
+function Button({ label, onClick, imgSrc, imgAlt, className }) {
+  return (
+    <button className={`${styles.button} ${className}`} onClick={onClick}>
+      {imgSrc ? (
+        <img src={imgSrc} alt={imgAlt} className={styles.buttonImage} />
+      ) : (
+        label
+      )}
+    </button>
+  );
 }
 
 export default Button;
