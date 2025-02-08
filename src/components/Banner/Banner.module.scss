@@ -1,7 +1,7 @@
 .banner {
   position: relative;
   width: 100%;
-  max-width: 1240px; // Largeur conforme à Figma
+  max-width: 1240px;
   height: 223px;
   box-shadow: #f6f6f6;
 }
@@ -14,7 +14,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
-  z-index: 1; /* pour que l'overlay soit en dessous du texte */
+  z-index: 1;
 }
 
 .bg {
@@ -36,6 +36,6 @@
   text-align: center;
   white-space: nowrap;
   padding: 1rem;
-  z-index: 2; /* Texte au-dessus de l'overlay */
-  color: #ffffff; /* pour que le texte reste visible */
+  z-index: 2;
+  color: #ffffff;
 }

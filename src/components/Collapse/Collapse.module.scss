@@ -1,59 +1,47 @@
 .collapse {
-  width: 100%;
-  max-width: 494px; // Assure la largeur exacte de chaque Collapse
-  height: 100%;
-}
+  flex: 1; // Permet à chaque collapse de prendre un espace égal
+  max-width: 582px; // Largeur max comme demandé
+  border-radius: 10px;
 
-.collapseContainer {
-  width: 100%;
-  max-width: 1023px; // Respecte la largeur max définie dans Figma
-
-  height: auto; // S’adapte au contenu
-  max-height: 298px; // Respecte la hauteur max définie
-
-  display: flex;
-  flex-direction: column;
-  align-items: center; // Centre horizontalement les enfants (les collapses)
-  justify-content: center; // Centre si besoin verticalement aussi
-
-  gap: 30px; // Espacement entre les collapses
-
-  margin: 0 auto; // Centre le conteneur sur la page
-  padding: 10px;
-}
-
-.parentWrapper {
-  display: flex;
-  justify-content: center; // Centre le `collapseContainer`
-  width: 100%;
+  @media (min-width: 1024px) {
+    width: 582px;
+  }
 }
 
 .header {
   background: #ff6060;
-  padding: 10px 20px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: Montserrat, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
   color: white;
-  border-radius: 5px;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: background 0.3s ease-in-out;
 }
 
-.toggleButton {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+.header:hover {
+  background: #e55050;
+}
+
+.title {
+  margin: 0;
+  flex-grow: 1;
+  text-align: left;
 }
 
 .content {
-  background: #000000;
-  color: white;
+  background: white;
+  color: black;
   padding: 15px;
   font-size: 16px;
   line-height: 1.5;
   text-align: left;
+  border-radius: 0 0 10px 10px;
 }

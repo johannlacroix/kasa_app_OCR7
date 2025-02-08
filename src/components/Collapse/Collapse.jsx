@@ -12,19 +12,14 @@ const Collapse = ({ title, content, size = "large" }) => {
         isOpen ? styles.open : ""
       }`}
     >
-      <div className={styles.header}>
-        <h3>{title}</h3>
-        <button
-          className={styles.toggleButton}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? (
-            <ChevronUp size={24} color="white" />
-          ) : (
-            <ChevronDown size={24} color="white" />
-          )}
-        </button>
-      </div>
+      <button className={styles.header} onClick={() => setIsOpen(!isOpen)}>
+        <h3 className={styles.title}>{title}</h3>
+        {isOpen ? (
+          <ChevronDown size={24} color="white" />
+        ) : (
+          <ChevronUp size={24} color="white" />
+        )}
+      </button>
       {isOpen && <div className={styles.content}>{content}</div>}
     </div>
   );
@@ -38,3 +33,7 @@ Collapse.propTypes = {
 };
 
 export default Collapse;
+
+ChevronUp;
+
+ChevronDown;

@@ -128,8 +128,8 @@ body {
 
 .collapse-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; // Espacement entre les collapses
+  gap: 20px; // Espace entre les collapses
   margin-top: 20px;
 }
 
@@ -184,4 +184,5 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  padding-top: 20px;
 }
