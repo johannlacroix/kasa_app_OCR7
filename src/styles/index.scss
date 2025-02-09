@@ -29,11 +29,6 @@ body {
   max-width: 1240px;
   margin: 40px auto;
   padding: 20px;
-
-  @media (max-width: 768px) {
-    padding: 10px;
-    margin: 20px auto;
-  }
 }
 
 .image-container {
@@ -49,34 +44,21 @@ body {
   height: 400px;
   object-fit: cover;
   border-radius: 20px;
-
-  @media (max-width: 768px) {
-    height: 250px;
-  }
 }
 
 .titre {
   color: $primary-color;
   font-size: 2rem;
   margin: 10px 0;
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
 }
 
 .location {
   font-size: 1.2rem;
   color: #333;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
 }
 
 .tags {
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
   margin-top: 10px;
 }
@@ -94,11 +76,6 @@ body {
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
 
 .host-info {
@@ -124,25 +101,67 @@ body {
   color: $primary-color;
 }
 
+.collapse {
+  background: #f6f6f6;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.collapse-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapse-content {
+  display: none;
+  padding-top: 10px;
+}
+
+.collapse.open .collapse-content {
+  display: block;
+}
+
 .collapse-container {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   margin-top: 20px;
+}
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 10px;
-  }
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.prev img,
+.next img {
+  width: 100%;
+  height: auto;
 }
 
 .carousel {
   position: relative;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .carouselButton {
   position: absolute;
   top: 50%;
@@ -150,55 +169,40 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-
-  @media (max-width: 768px) {
-    width: 30px;
-  }
+}
+.leftArrow {
+  left: 20px;
 }
 
+.rightArrow {
+  right: 20px;
+}
 .logement-info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 20px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
 }
-
 .notFound {
   font-size: 12rem;
   text-align: center;
   margin-top: 50px;
   color: $primary-color;
-
-  @media (max-width: 768px) {
-    font-size: 6rem;
-  }
 }
-
 .notFoundText {
   font-size: 2rem;
   text-align: center;
+  // margin-top: 50px;
   color: $primary-color;
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
 }
-
 .link {
   font-size: 1rem;
   text-align: center;
   color: $text-dark;
 }
-
 .notFoundCtn {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }

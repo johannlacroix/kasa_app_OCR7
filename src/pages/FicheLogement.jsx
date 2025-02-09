@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "../styles/index.scss";
 import Collapse from "../components/Collapse/Collapse";
 import Rating from "../components/Rating/Rating";
@@ -11,7 +11,7 @@ const FicheLogement = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("/annonces.json")
       .then((response) => {
@@ -22,8 +22,10 @@ const FicheLogement = () => {
       })
       .then((data) => {
         const foundLogement = data.find((logement) => logement.id === id);
+        console.log("KJHFDKSJFHKJH", foundLogement);
         if (!foundLogement) {
-          setError("Logement non trouvé");
+          console.log("XXXXXXXXXXXXX");
+          navigate("/error");
           setLoading(false);
         } else {
           setLogement(foundLogement);
@@ -34,7 +36,7 @@ const FicheLogement = () => {
         setError(error.message);
         setLoading(false);
       });
-  }, [id]);
+  }, [id, navigate]);
 
   if (loading) return <p className="loading">Chargement...</p>;
   if (error) return <p className="error">{error}</p>;
