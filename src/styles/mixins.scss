@@ -1,12 +1,12 @@
 @use "variables";
 @use "sass:color";
 
-// Mixin pour le mode clair
+// Mixin pr mode clair
 @mixin light-mode {
-  $text-dark: #333; // Remplacer après
+  $text-dark: #333; // remplacer après si il faut
   :root {
-    color: variables.$text-dark; // Modifié pour référencer "variables"
-    background-color: variables.$bg-light; // Modifié pour référencer "variables"
+    color: variables.$text-dark; // modifié pr réf variables
+    background-color: variables.$bg-light; // modifié pr réf variables
   }
 
   a:hover {
@@ -14,7 +14,7 @@
   }
 
   button {
-    background-color: variables.$button-bg-light; // Modifié pour référencer "variables"
+    background-color: variables.$button-bg-light; // modifié pr réf variables
   }
 }
 

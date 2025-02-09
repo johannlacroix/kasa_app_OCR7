@@ -1,10 +1,17 @@
+import { Link } from "react-router-dom";
+
 const NotFound = () => {
   return (
     <div>
-      <h1>
-        Oops! Désolé mais il n y a rien à cette adresse. (Erreur 404 - Page non
-        trouvée.) ?
-      </h1>
+      <div className="notFoundCtn">
+        <h1 className="notFound">404</h1>
+        <p className="notFoundText">
+          Oops! La page que vous demandez n&apos;existe pas.
+        </p>
+        <Link to="/Home" className="link">
+          Retourner sur la page d’accueil
+        </Link>
+      </div>
     </div>
   );
 };

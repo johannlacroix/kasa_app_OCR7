@@ -3,7 +3,10 @@
   width: 100%;
   max-width: 1240px;
   height: 223px;
+  min-height: 150px;
   box-shadow: #f6f6f6;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 .overlay {
@@ -34,8 +37,44 @@
   font-weight: 700;
   line-height: normal;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
   padding: 1rem;
   z-index: 2;
   color: #ffffff;
+  max-width: 80%;
+}
+
+/* Adaptation sur tablette */
+@media (max-width: 1024px) {
+  .banner {
+    height: 180px;
+  }
+
+  .textOverlay {
+    font-size: 36px;
+  }
+}
+
+/* Adaptation sur mobile */
+@media (max-width: 768px) {
+  .banner {
+    height: 150px;
+  }
+
+  .textOverlay {
+    font-size: 28px;
+    padding: 0.5rem;
+    max-width: 90%;
+  }
+}
+
+/* Très petits écrans */
+@media (max-width: 480px) {
+  .banner {
+    height: 120px;
+  }
+
+  .textOverlay {
+    font-size: 20px;
+  }
 }

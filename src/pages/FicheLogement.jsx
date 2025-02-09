@@ -76,7 +76,7 @@ const FicheLogement = () => {
         />
       </div>
 
-      {/* Informations principales */}
+      {/* Infos logement */}
       <div className="logement-info">
         <div className="details">
           <h1 className="titre">{logement.title}</h1>
@@ -90,7 +90,7 @@ const FicheLogement = () => {
           </div>
         </div>
 
-        {/* Informations de l'hôte */}
+        {/* Infos sur l'hôte */}
         <div className="host-section">
           <div className="host-info">
             <span>{logement.host.name}</span>
@@ -104,7 +104,7 @@ const FicheLogement = () => {
         </div>
       </div>
 
-      {/* Sections déroulantes */}
+      {/* Collapses */}
       <div className="collapse-container">
         <Collapse title="Description" content={logement.description} />
         <Collapse
