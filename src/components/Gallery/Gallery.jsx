@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Gallery.module.scss";
 import Banner from "../Banner/Banner";
 import Card from "../Card/Card";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Gallery = () => {
   console.log("Gallery est monté !");
@@ -37,9 +37,13 @@ const Gallery = () => {
           <p>Aucune annonce disponible.</p>
         ) : (
           annonces.map((annonce) => (
-            <NavLink to={`/logement/${annonce.id}`} key={annonce.id}>
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`/logement/${annonce.id}`}
+              key={annonce.id}
+            >
               <Card annonce={annonce} />
-            </NavLink>
+            </Link>
           ))
         )}
       </div>
