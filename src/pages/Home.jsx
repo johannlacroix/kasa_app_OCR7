@@ -2,7 +2,7 @@ import Gallery from "../components/Gallery/Gallery";
 
 const Home = () => {
   return (
-    <div>
+    <div className="content-wrapper">
       <Gallery />
     </div>
   );

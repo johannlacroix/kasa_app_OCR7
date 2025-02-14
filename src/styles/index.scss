@@ -1,5 +1,6 @@
 @use "@/styles/variables" as variables;
 @use "sass:color";
+@import "./layout.scss";
 
 $primary-color: #ff6060;
 $bg-dark: black;
@@ -23,6 +24,17 @@ body {
   padding: 0;
   background: $bg-light;
   color: $text-dark;
+}
+
+.wrapper {
+  max-width: 1280px; // Définit une largeur max raisonnable
+  margin: 0 auto; // Centre le site horizontalement
+  padding: 0 20px; // Ajoute un padding pour éviter que le contenu touche les bords
+  width: 100%;
+}
+
+.container {
+  padding: 40px;
 }
 
 .fiche-logement {

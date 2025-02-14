@@ -55,66 +55,68 @@ const FicheLogement = () => {
   };
 
   return (
-    <div className="fiche-logement">
-      {/* Carrousel d'images */}
-      <div className="carousel">
-        <Button
-          className="carouselButton leftArrow"
-          onClick={prevImage}
-          imgSrc="/logos_pictos/VectorL.png"
-          imgAlt="Flèche gauche"
-        />
+    <div className="content-wrapper">
+      <div className="fiche-logement">
+        {/* Carrousel d'images */}
+        <div className="carousel">
+          <Button
+            className="carouselButton leftArrow"
+            onClick={prevImage}
+            imgSrc="/logos_pictos/VectorL.png"
+            imgAlt="Flèche gauche"
+          />
 
-        <img
-          className="image-logement"
-          src={logement.pictures[currentImageIndex]}
-          alt={logement.title}
-        />
-        <Button
-          className="carouselButton rightArrow"
-          onClick={nextImage}
-          imgSrc="/logos_pictos/VectorR.png"
-          imgAlt="Flèche droite"
-        />
-      </div>
+          <img
+            className="image-logement"
+            src={logement.pictures[currentImageIndex]}
+            alt={logement.title}
+          />
+          <Button
+            className="carouselButton rightArrow"
+            onClick={nextImage}
+            imgSrc="/logos_pictos/VectorR.png"
+            imgAlt="Flèche droite"
+          />
+        </div>
 
-      {/* Infos logement */}
-      <div className="logement-info">
-        <div className="details">
-          <h1 className="titre">{logement.title}</h1>
-          <h2 className="location">{logement.location}</h2>
-          <div className="tags">
-            {logement.tags.map((tag, index) => (
-              <span key={index} className="tag">
-                {tag}
-              </span>
+        {/* Infos logement */}
+        <div className="logement-info">
+          <div className="details">
+            <h1 className="titre">{logement.title}</h1>
+            <h2 className="location">{logement.location}</h2>
+            <div className="tags">
+              {logement.tags.map((tag, index) => (
+                <span key={index} className="tag">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Infos sur l'hôte */}
+          <div className="host-section">
+            <div className="host-info">
+              <span>{logement.host.name}</span>
+              <img
+                className="host-picture"
+                src={logement.host.picture}
+                alt={logement.host.name}
+              />
+            </div>
+            <Rating rating={logement.rating} />
+          </div>
+        </div>
+
+        {/* Collapses */}
+        <div className="collapse-container">
+          <Collapse title="Description" content={logement.description} />
+          <Collapse
+            title="Équipements"
+            content={logement.equipments.map((item, index) => (
+              <li key={index}>{item}</li>
             ))}
-          </div>
+          />
         </div>
-
-        {/* Infos sur l'hôte */}
-        <div className="host-section">
-          <div className="host-info">
-            <span>{logement.host.name}</span>
-            <img
-              className="host-picture"
-              src={logement.host.picture}
-              alt={logement.host.name}
-            />
-          </div>
-          <Rating rating={logement.rating} />
-        </div>
-      </div>
-
-      {/* Collapses */}
-      <div className="collapse-container">
-        <Collapse title="Description" content={logement.description} />
-        <Collapse
-          title="Équipements"
-          content={logement.equipments.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        />
       </div>
     </div>
   );

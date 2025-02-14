@@ -1,10 +1,10 @@
 import Banner from "../components/Banner/Banner";
-import styles from "../components/Gallery/Gallery.module.scss";
+// import styles from "../components/Gallery/Gallery.module.scss";
 import Collapse from "../components/Collapse/Collapse";
 
 const About = () => {
   return (
-    <div className={styles.container}>
+    <div className="content-wrapper">
       <Banner image="/about_banner_bg.png" text="" />
       <div className="collapseContainer">
         <Collapse
