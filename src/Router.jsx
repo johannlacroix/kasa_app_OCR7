@@ -3,8 +3,6 @@ import Home from "./pages/Home";
 import FicheLogement from "./pages/FicheLogement";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Gallery from "./components/Gallery/Gallery";
 
 const AppRouter = () => {
@@ -13,7 +11,6 @@ const AppRouter = () => {
   return (
     <Router>
       <div className="wrapper">
-        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/" element={<Gallery />} />
@@ -23,7 +20,6 @@ const AppRouter = () => {
           <Route path="home" element={<Home />} />
           <Route path="/error" element={<NotFound />} />
         </Routes>
-        <Footer />
       </div>
     </Router>
   );

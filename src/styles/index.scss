@@ -16,6 +16,7 @@ $text-light: rgba(255, 255, 255, 0.87);
   --text-color: #{$text-dark};
   --bg-color: #{$bg-light};
   font-family: var(--font-family);
+ 
 }
 
 body {
@@ -24,12 +25,14 @@ body {
   padding: 0;
   background: $bg-light;
   color: $text-dark;
+  
 }
 
 .wrapper {
   max-width: 1280px; // Définit une largeur max raisonnable
-  margin: 0 auto; // Centre le site horizontalement
-  padding: 0 20px; // Ajoute un padding pour éviter que le contenu touche les bords
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
   width: 100%;
 }
 
@@ -137,9 +140,11 @@ body {
   display: block;
 }
 
-.collapse-container {
+.collapseContainer {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
   gap: 20px;
   margin-top: 20px;
 }

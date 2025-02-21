@@ -1,10 +1,10 @@
 import Banner from "../components/Banner/Banner";
-// import styles from "../components/Gallery/Gallery.module.scss";
 import Collapse from "../components/Collapse/Collapse";
+import Layout from "../layout/Layout";
 
 const About = () => {
   return (
-    <div className="content-wrapper">
+    <Layout>
       <Banner image="/about_banner_bg.png" text="" />
       <div className="collapseContainer">
         <Collapse
@@ -24,7 +24,7 @@ const About = () => {
           content="La sécurité est notre priorité pour tous nos clients."
         />
       </div>
-    </div>
+    </Layout>
   );
 };
 

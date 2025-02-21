@@ -1,14 +1,13 @@
 // styles/layout.scss
 
-.content-wrapper {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  // padding: 0 2rem; // Padding commun sur les côtés
-}
+// .content-wrapper {
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 0 2rem; // Padding commun sur les côtés
+// }
 
-@media (max-width: 768px) {
-  .content-wrapper {
-    // padding: 0 1rem; // Réduction du padding sur mobile
-  }
-}
+// @media (max-width: 768px) {
+//   .content-wrapper {
+//     padding: 0 1rem; // Réduction du padding sur mobile
+//   }
+// }

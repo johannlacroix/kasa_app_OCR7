@@ -1,11 +1,12 @@
 import Gallery from "../components/Gallery/Gallery";
+import Layout from "../layout/Layout";
 
 const Home = () => {
   return (
-    <div className="content-wrapper">
+    <Layout>
       <Gallery />
-    </div>
-  );
+    </Layout>
+      );
 };
 
 export default Home;
