@@ -10,7 +10,7 @@ const AppRouter = () => {
 
   return (
     <Router>
-      <div className="wrapper">
+      <div className="">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/" element={<Gallery />} />

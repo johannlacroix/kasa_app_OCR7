@@ -4,6 +4,7 @@ import "../styles/index.scss";
 import Collapse from "../components/Collapse/Collapse";
 import Rating from "../components/Rating/Rating";
 import Button from "../components/Button/Button";
+import Layout from "../layout/Layout";
 
 const FicheLogement = () => {
   const { id } = useParams();
@@ -55,7 +56,7 @@ const FicheLogement = () => {
   };
 
   return (
-    <div className="content-wrapper">
+    <Layout>
       <div className="fiche-logement">
         {/* Carrousel d'images */}
         <div className="carousel">
@@ -118,7 +119,7 @@ const FicheLogement = () => {
           />
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

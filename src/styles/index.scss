@@ -28,14 +28,6 @@ body {
   
 }
 
-.wrapper {
-  max-width: 1280px; // Définit une largeur max raisonnable
-  margin: 0 auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  width: 100%;
-}
-
 .container {
   padding: 40px;
 }
@@ -140,13 +132,26 @@ body {
   display: block;
 }
 
+// Pour la page About
 .collapseContainer {
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: center;
   gap: 20px;
-  margin-top: 20px;
+  // margin-top: 20px;
+  padding: 0 120px;
+  margin-top: 40px;
+}
+
+// Pour la page FicheLogement
+.collapse-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  gap: 80px;
+ 
+  margin-top: 25px;
 }
 
 .next {
