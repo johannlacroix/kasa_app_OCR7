@@ -5,8 +5,9 @@ import Layout from "../layout/Layout";
 const About = () => {
   return (
     <Layout>
+      <div className="aboutContainer">
       <Banner image="/about_banner_bg.png" text="" />
-      <div className="collapseContainer">
+      <div className="aboutCollapseContainer">
         <Collapse
           title="Fiabilité"
           content="Nos logements sont vérifiés régulièrement pour garantir une qualité optimale."
@@ -23,6 +24,7 @@ const About = () => {
           title="Sécurité"
           content="La sécurité est notre priorité pour tous nos clients."
         />
+      </div>
       </div>
     </Layout>
   );

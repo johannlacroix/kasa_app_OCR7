@@ -1,7 +1,11 @@
+$card-padding: 20px;
+$card-border-radius: 8px;
+$background-color: #ff6060;
+
 .card {
   position: relative;
-  padding: 20px;
-  border-radius: 8px;
+  padding: $card-padding;
+  border-radius: $card-border-radius;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   overflow: hidden;
@@ -16,7 +20,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ff6060;
+    background: $background-color;
     border-radius: inherit;
 
     &::after {
@@ -41,7 +45,7 @@
     position: relative;
     width: 100%;
     flex-grow: 1;
-    border-radius: 8px;
+    border-radius: $card-border-radius;
     overflow: hidden;
     z-index: 1;
 
@@ -58,17 +62,89 @@
     position: relative;
     z-index: 2;
     color: white;
-    font-size: 1.5rem; // Taille normale
+    font-size: 1.5rem;
   }
 
-  /* Responsive - Taille du texte plus petite en dessous de 768px */
   @media (max-width: 768px) {
     h2 {
-      font-size: 1rem; // Réduction de la taille du texte
+      font-size: 1rem;
     }
-
-    .card {
-      padding: 15px; // Moins de padding sur mobile
-    }
+    padding: 15px;
   }
 }
+
+
+// .card {
+//   position: relative;
+//   padding: 20px;
+//   border-radius: 8px;
+//   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   text-align: center;
+//   overflow: hidden;
+//   aspect-ratio: 1 / 1;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+
+//   .background {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: #ff6060;
+//     border-radius: inherit;
+
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       background: linear-gradient(
+//         180deg,
+//         rgba(255, 96, 96, 0) 0%,
+//         rgba(200, 50, 50, 0.3) 50%,
+//         rgba(100, 20, 20, 0.6) 100%
+//       );
+//       border-radius: inherit;
+//       pointer-events: none;
+//     }
+//   }
+
+//   .imageContainer {
+//     position: relative;
+//     width: 100%;
+//     flex-grow: 1;
+//     border-radius: 8px;
+//     overflow: hidden;
+//     z-index: 1;
+
+//     img {
+//       width: 100%;
+//       height: 100%;
+//       object-fit: cover;
+//       object-position: center;
+//       display: block;
+//     }
+//   }
+
+//   h2 {
+//     position: relative;
+//     z-index: 2;
+//     color: white;
+//     font-size: 1.5rem; // Taille normale
+//   }
+
+//   /* Responsive - Taille du texte plus petite en dessous de 768px */
+//   @media (max-width: 768px) {
+//     h2 {
+//       font-size: 1rem; // Réduction de la taille du texte
+//     }
+
+//     .card {
+//       padding: 15px; // Moins de padding sur mobile
+//     }
+//   }
+// }

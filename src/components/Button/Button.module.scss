@@ -1,16 +1,16 @@
 .button {
-  background: none; // Supprime l'arrière-plan
-  border: none; // Supprime la bordure
-  padding: 0; // Supprime l'espace interne
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.buttonImage {
-  width: 40px; // Ajuste la taille des flèches
-  height: auto;
+  .buttonImage {
+    width: 40px;
+    height: auto;
+  }
 }
 
 .carouselButton {
@@ -18,3 +18,25 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+
+// .button {
+//   background: none; 
+//   border: none; 
+//   padding: 0; 
+//   cursor: pointer;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .buttonImage {
+//   width: 40px; 
+//   height: auto;
+// }
+
+// .carouselButton {
+//   position: absolute;
+//   top: 50%;
+//   transform: translateY(-50%);
+// }
