@@ -1,27 +1,60 @@
+
+
+@use "@/styles/variables" as variables;
+
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0rem;
+  padding: 0;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); // 3 colonnes en desktop
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  
   border-radius: 20px;
   background-color: #f6f6f6;
   padding: 40px;
   margin-top: 40px;
-}
 
-/* Responsive */
-@media (max-width: 425px) {
-  .gallery {
-    grid-template-columns: 1fr; // 1 seule colonne en mobile
-    padding: 20px; // Moins de padding sur mobile
+  @media (max-width: variables.$mobile) {
+    grid-template-columns: 1fr;
+    padding: 20px;
   }
 }
+
+
+
+// @use "@/styles/variables" as variables;
+
+
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   max-width: 1280px;
+//   margin: 0 auto;
+//   padding: 0rem;
+// }
+
+// .gallery {
+//   display: grid;
+//   grid-template-columns: repeat(3, 1fr); // 3 colonnes en desktop
+//   gap: 20px;
+  
+//   border-radius: 20px;
+//   background-color: #f6f6f6;
+//   padding: 40px;
+//   margin-top: 40px;
+// }
+
+// /* Responsive */
+// @media (max-width: variables.$mobile) {
+//   .gallery {
+//     grid-template-columns: 1fr;
+//     padding: 20px;
+//   }
+// }

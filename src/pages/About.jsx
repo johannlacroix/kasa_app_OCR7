@@ -5,7 +5,6 @@ import Layout from "../layout/Layout";
 const About = () => {
   return (
     <Layout>
-      <div className="aboutContainer">
       <Banner image="/about_banner_bg.png" text="" />
       <div className="aboutCollapseContainer">
         <Collapse
@@ -24,7 +23,6 @@ const About = () => {
           title="Sécurité"
           content="La sécurité est notre priorité pour tous nos clients."
         />
-      </div>
       </div>
     </Layout>
   );
