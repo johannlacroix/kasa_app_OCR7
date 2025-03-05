@@ -23,6 +23,8 @@ body {
   padding: 0;
   background: $bg-light;
   color: $text-dark;
+  margin: 0 auto;
+
 }
 
 .container {
@@ -30,6 +32,7 @@ body {
   margin: 0 auto;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  max-width: 80%;
 
   @media (max-width: 768px) {
     padding: 1rem;
@@ -38,15 +41,15 @@ body {
 
 .header {
   display: flex;
+  flex-direction:row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
 }
 
 .logo {
-  width: 210px;
+  width: 160px;
   height: auto;
-  padding: 1em;
 
   @media (max-width: 768px) {
     width: 150px;
@@ -179,7 +182,6 @@ body {
 .star-filled {
   color: $primary-color;
 }
-
 
 // @use "@/styles/variables" as variables;
 // @use "sass:color";

@@ -27,11 +27,6 @@ const Gallery = () => {
 
   return (
     <div className={styles.container}>
-      {/* <Banner
-        image="/gallery_title_bg.png"
-        text="Chez vous, partout et ailleurs"
-      /> */}
-
       <div className={styles.gallery}>
         {annonces.length === 0 ? (
           <p>Aucune annonce disponible.</p>

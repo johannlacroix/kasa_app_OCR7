@@ -1,143 +1,69 @@
+@use "@/styles/variables" as variables;
+
 .banner {
-	position: relative;
-	width: 100%;
-	max-width: 1280px; /* Limite la largeur de la bannière */
-	margin: 0 auto; /* Centrer la bannière */
-	height: 223px;
-	min-height: 150px;
-	box-shadow: #f6f6f6;
-	border-radius: 20px;
-	overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 223px;
+  min-height: 150px;
+  box-shadow: #f6f6f6;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto; // Centre la bannière
+  max-width: 80%;
 
-	.overlay,
-	.bg {
-		width: 100%;
-		height: 100%;
-		border-radius: 20px;
-	}
+  @media (max-width: variables.$mobile) {
+    max-width: 80%;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 80px;
+  }
 
-	.overlay {
-		position: absolute;
-		top: 0;
-		left: 0;
-		background-color: rgba(0, 0, 0, 0.5);
-		z-index: 1;
-	}
+  .overlay,
+  .bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
 
-	.bg {
-		object-fit: cover;
-	}
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
 
-	.textOverlay {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		font-family: Montserrat, sans-serif;
-		font-size: 48px;
-		font-weight: 700;
-		text-align: center;
-		white-space: normal;
-		padding: 1rem;
-		z-index: 2;
-		color: #ffffff;
-		max-width: 80%;
-	}
+  .bg {
+    object-fit: cover;
+  }
 
-	@media (max-width: 1280px) {
-		height: 180px;
+  .textOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: Montserrat, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    white-space: normal;
+    padding: 0;
+    z-index: 2;
+    color: #ffffff;
+    max-width: 80%;
+  }
 
-		.textOverlay {
-			font-size: 36px;
-		}
-	}
-
-	@media (max-width: 768px) {
-		height: 150px;
-
-		.textOverlay {
-			font-size: 28px;
-			padding: 0.5rem;
-			max-width: 90%;
-		}
-	}
-
-	@media (max-width: 480px) {
-		height: 120px;
-
-		.textOverlay {
-			font-size: 20px;
-		}
-	}
+  @media (max-width: variables.$mobile) {
+    .textOverlay {
+      font-size: 24px;
+      padding: 0;
+      max-width: 80%;
+      text-align: left;
+      left: 10%;
+      transform: translate(0, -50%);
+    }
+  }
 }
-
-// .banner {
-//   position: relative;
-//   width: 100%;
-//   height: 223px;
-//   min-height: 150px;
-//   box-shadow: #f6f6f6;
-//   border-radius: 20px;
-//   overflow: hidden;
-
-//   .overlay {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background-color: rgba(0, 0, 0, 0.5);
-//     border-radius: 20px;
-//     z-index: 1;
-//   }
-
-//   .bg {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     border-radius: 20px;
-//   }
-
-//   .textOverlay {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     font-family: Montserrat, sans-serif;
-//     font-size: 48px;
-//     font-weight: 700;
-//     line-height: normal;
-//     text-align: center;
-//     white-space: normal;
-//     padding: 1rem;
-//     z-index: 2;
-//     color: #ffffff;
-//     max-width: 80%;
-//   }
-
-//   @media (max-width: 1280px) {
-//     height: 180px;
-
-//     .textOverlay {
-//       font-size: 36px;
-//     }
-//   }
-
-//   @media (max-width: 768px) {
-//     height: 150px;
-
-//     .textOverlay {
-//       font-size: 28px;
-//       padding: 0.5rem;
-//       max-width: 90%;
-//     }
-//   }
-
-//   @media (max-width: 480px) {
-//     height: 120px;
-
-//     .textOverlay {
-//       font-size: 20px;
-//     }
-//   }
-// }
