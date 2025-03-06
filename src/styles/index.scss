@@ -1,7 +1,6 @@
 @use "@/styles/variables" as variables;
 @use "sass:color";
 
-
 // Variables
 $primary-color: #ff6060;
 $bg-dark: black;
@@ -12,60 +11,76 @@ $text-light: rgba(255, 255, 255, 0.87);
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 
 :root {
-  --font-family: "Montserrat", sans-serif;
-  --primary-color: #{$primary-color};
-  --text-color: #{$text-dark};
-  --bg-color: #{$bg-light};
-  font-family: var(--font-family);
+	--font-family: "Montserrat", sans-serif;
+	--primary-color: #{$primary-color};
+	--text-color: #{$text-dark};
+	--bg-color: #{$bg-light};
+	font-family: var(--font-family);
 }
 
 body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background: $bg-light;
-  color: $text-dark;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: $bg-light;
+	color: $text-dark;
 }
 
 .container {
-  padding: 40px;
+	padding: 0px;
 }
 
 .fiche-logement {
   max-width: 1240px;
   margin: 40px auto;
   padding: 20px;
+  overflow: hidden; // Empêche les débordements
 }
 
 .image-container {
-  position: relative;
-  width: 100%;
-  max-height: 400px;
-  overflow: hidden;
-  border-radius: 10px;
-
-  
+	position: relative;
+	width: 100%;
+	max-height: 400px;
+	overflow: hidden;
+	border-radius: 10px;
 }
 .image-logement {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 20px;
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 20px;
+
+	@media (max-width: variables.$mobile) {
+		height: 255px;
+    width:100%;
+	}
 }
-.titre {
-  color: $primary-color;
-  font-size: 1.6rem;
-  font-weight: 500;
-  margin: 10px 0;
+.title {
+	color: $primary-color;
+	font-size: 1.6rem;
+	font-weight: 500;
+	margin: 10px 0;
+
+  @media (max-width: variables.$mobile) {
+    font-size: 1.2rem
+  }
 }
 
 .location {
-  font-size: 1.2rem;
-  color: #333;
+	font-size: 1.2rem;
+	color: #333;
+
+    @media (max-width: variables.$mobile) {
+    font-size: 0.9rem
+  }
+
 }
+
+
 
 .tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 10px;
 
@@ -76,157 +91,239 @@ body {
     border-radius: 10px;
     font-size: 0.9rem;
   }
+
+  @media (max-width: variables.$mobile) {
+    .tag {
+      padding: 3px 6px;
+      font-size: 0.7rem;
+      border-radius: 8px;
+    }
+  }
 }
+
 
 .host {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
-
-
-
- 
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 20px;
 }
-.host-picture {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
-.host-info {
-  display: flex;
-  align-items: center;
-  justify-content: right;
-  gap: 10px;
-  color: $primary-color;
-}
+
 .stars {
-  display: flex;
-  gap: 5px;
-  color: #e3e3e3;
+	display: flex;
+	gap: 5px;
+	color: #e3e3e3;
 
-  .star-filled {
-    color: $primary-color;
-  }
+	.star-filled {
+		color: $primary-color;
+	}
 }
 
 .collapse {
-  background: #f6f6f6;
-  padding: 30px;
-  margin-top: 20px;
-  border-radius: 5px;
-  cursor: pointer;
+	background: #f6f6f6;
+	padding: 30px;
+	margin-top: 20px;
+	border-radius: 5px;
+	cursor: pointer;
 
-  .collapse-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-  }
+	.collapse-title {
+		font-size: 1.1rem;
+		font-weight: bold;
+		display: flex;
+		justify-content: space-between;
+	}
 
-  .collapse-content {
-    display: none;
-    padding-top: 10px;
-  }
+	.collapse-content {
+		display: none;
+		padding-top: 10px;
+	}
 
-  &.open .collapse-content {
-    display: block;
-  }
+	&.open .collapse-content {
+		display: block;
+	}
 }
 
 // Page About
 .aboutContainer {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 0 120px;
-  margin-top: 40px;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	gap: 20px;
+	padding: 0 120px;
+	margin-top: 40px;
 }
 
 .aboutCollapseContainer {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 0;
-  margin-top: 40px;
-  max-width: 1280px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  max-width: 1100px;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	gap: 20px;
+	padding: 0;
+	margin-top: 40px;
+	max-width: 1280px;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	max-width: 1100px;
 }
 
 // Page FicheLogement
 .collapse-container {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  gap: 80px;
-  margin-top: 25px;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	gap: 80px;
+	margin-top: 25px;
 }
 
-// Carousel
+// Styles du carousel et des flèches
 .carousel {
-  position: relative;
-  align-items: center;
-  justify-content: center;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-  .carouselButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-}
+	.carouselButton {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: none;
+		border: none;
+		cursor: pointer;
+		width: 50px;
+		height: auto;
 
-.leftArrow {
-  left: 20px;
-}
+		img {
+			width: 100%;
+			height: auto;
+		}
 
-.rightArrow {
-  right: 20px;
+		@media (max-width: 768px) {
+			width: 15px;
+			height: auto;
+		}
+	}
+
+	.leftArrow {
+		left: 20px;
+
+		@media (max-width: 768px) {
+			left: 10px;
+		}
+	}
+
+	.rightArrow {
+		right: 20px;
+
+		@media (max-width: 768px) {
+			right: 10px;
+		}
+	}
 }
 
 // Logement Info
 .logement-info {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
-  padding-top: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 0;
+  gap: 20px;
+
+  .details {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .host-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex: 1;
+    min-width: 200px;
+
+@media (max-width:variables.$mobile) {
+  flex-direction: row-reverse;
+  align-items:center;
+}
+
+  }
+  .host-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: $primary-color;
+    
+@media (max-width:variables.$mobile) {
+  font-size:0.8rem;
+}
+
+  }
+
+  .host-picture {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+@media (max-width:variables.$mobile) {
+  width: 25px;
+    height: 25px;
+}
+
+  }
+}
+
+
+// Responsive
+@media (max-width: 768px) {
+  .logement-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .details {
+    width: 100%;
+    text-align: left; // Alignement du texte à gauche même en colonne
+  }
+
+  .host-section {
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+  }
 }
 
 // Page Not Found
 .notFound {
-  font-size: 12rem;
-  text-align: center;
-  margin-top: 50px;
-  color: $primary-color;
+	font-size: 12rem;
+	text-align: center;
+	margin-top: 50px;
+	color: $primary-color;
 }
 
 .notFoundText {
-  font-size: 2rem;
-  text-align: center;
-  color: $primary-color;
+	font-size: 2rem;
+	text-align: center;
+	color: $primary-color;
 }
 
 .link {
-  font-size: 1rem;
-  text-align: center;
-  color: $text-dark;
-  margin-top: 80px;
-  margin-bottom: 120px;
+	font-size: 1rem;
+	text-align: center;
+	color: $text-dark;
+	margin-top: 80px;
+	margin-bottom: 120px;
 }
 
 .notFoundCtn {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

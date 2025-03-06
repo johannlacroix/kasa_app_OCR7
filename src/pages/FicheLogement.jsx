@@ -83,7 +83,7 @@ const FicheLogement = () => {
         {/* Infos logement */}
         <div className="logement-info">
           <div className="details">
-            <h1 className="titre">{logement.title}</h1>
+            <h1 className="title">{logement.title}</h1>
             <h2 className="location">{logement.location}</h2>
             <div className="tags">
               {logement.tags.map((tag, index) => (

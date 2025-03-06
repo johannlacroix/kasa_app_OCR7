@@ -1,14 +1,21 @@
 .rating {
   display: flex;
   gap: 5px;
-}
 
-.starFilled {
-  color: #ff6060;
+  .starFilled {
+    color: #ff6060;
   font-size: 40px;
-}
+  }
 
-.starEmpty {
-  color: #e3e3e3;
-  font-size: 40px;
+  .starEmpty {
+    font-size: 40px; // Taille par défaut
+    font-size: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .starFilled, 
+    .starEmpty {
+      font-size: 20px; // Réduction de la taille des étoiles en mobile
+    }
+  }
 }

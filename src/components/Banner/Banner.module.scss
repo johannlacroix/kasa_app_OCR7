@@ -11,10 +11,10 @@
   border-radius: 20px;
   overflow: hidden;
   margin: 0 auto; // Centre la bannière
-  max-width: 80%;
+  max-width: 90%;
 
   @media (max-width: variables.$mobile) {
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     border-radius: 12px;
     overflow: hidden;
@@ -53,14 +53,14 @@
     padding: 0;
     z-index: 2;
     color: #ffffff;
-    max-width: 80%;
+    max-width: 90%;
   }
 
   @media (max-width: variables.$mobile) {
     .textOverlay {
       font-size: 24px;
       padding: 0;
-      max-width: 80%;
+      max-width: 90%;
       text-align: left;
       left: 10%;
       transform: translate(0, -50%);
