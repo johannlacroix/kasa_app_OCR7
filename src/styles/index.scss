@@ -170,6 +170,11 @@ body {
 	margin-right: auto;
 	width: 90%;
 	max-width: 1100px;
+
+@media (max-width:variables.$mobile) {
+	margin-top:20px;
+}
+
 }
 
 // Page FicheLogement
