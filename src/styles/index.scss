@@ -34,7 +34,7 @@ body {
   max-width: 1240px;
   margin: 40px auto;
   padding: 20px;
-  overflow: hidden; // Empêche les débordements
+  overflow: hidden;
 }
 
 .image-container {
@@ -214,7 +214,7 @@ body {
 			height: auto;
 		}
 
-		@media (max-width: 768px) {
+		@media (max-width: variables.$mobile) {
 			width: 15px;
 			height: auto;
 		}
@@ -223,7 +223,7 @@ body {
 	.leftArrow {
 		left: 20px;
 
-		@media (max-width: 768px) {
+		@media (max-width: variables.$mobile) {
 			left: 10px;
 		}
 	}
@@ -231,7 +231,7 @@ body {
 	.rightArrow {
 		right: 20px;
 
-		@media (max-width: 768px) {
+		@media (max-width: variables.$mobile) {
 			right: 10px;
 		}
 	}
@@ -294,7 +294,7 @@ body {
 
 
 // Responsive
-@media (max-width: 768px) {
+@media (max-width: variables.$mobile) {
   .logement-info {
     flex-direction: column;
     align-items: center;
@@ -303,7 +303,7 @@ body {
 
   .details {
     width: 100%;
-    text-align: left; // Alignement du texte à gauche même en colonne
+    text-align: left;
   }
 
   .host-section {
@@ -313,30 +313,51 @@ body {
   }
 }
 
-// Page Not Found
-.notFound {
-	font-size: 12rem;
-	text-align: center;
-	margin-top: 50px;
-	color: $primary-color;
-}
-
-.notFoundText {
-	font-size: 2rem;
-	text-align: center;
-	color: $primary-color;
-}
-
-.link {
-	font-size: 1rem;
-	text-align: center;
-	color: $text-dark;
-	margin-top: 80px;
-	margin-bottom: 120px;
-}
-
+// Page 404 Not Found
 .notFoundCtn {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
+
+.notFound {
+	font-size: 12rem;
+	color: var(--primary-color);
+	margin-top: 70px;
+
+	@media (max-width: variables.$mobile) {
+		font-size: 6rem;
+	}
+}
+
+.notFoundText {
+	font-size: 2rem;
+	color: var(--primary-color);
+	margin-top: 0px;
+	padding: 15px;
+
+	@media (max-width: variables.$mobile) {
+		font-size: 1.1rem;
+		margin-top: 50px;
+	}
+}
+
+.link {
+	font-size: 1rem;
+	margin-top: 80px;
+	margin-bottom: 120px;
+	text-decoration: none;
+	font-weight: 500;
+
+	&:hover {
+		color: color.adjust($primary-color, $lightness: -10%);
+		text-decoration: underline;
+	}
+
+	@media (max-width: variables.$mobile) {
+		font-size: 1rem;
+	}
+}
+

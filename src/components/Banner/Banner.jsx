@@ -4,7 +4,7 @@ import styles from "./Banner.module.scss";
 const Banner = ({ image, text }) => {
   return (
     <div className={styles.banner}>
-      <div className={styles.overlay}></div> {/* Overlay sombre */}
+      <div className={styles.overlay}></div> {/* sombre */}
       <img src={image} alt="Bannière" className={styles.bg} />
       <div className={styles.textOverlay}>{text}</div>
     </div>

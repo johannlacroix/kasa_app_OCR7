@@ -10,7 +10,7 @@
   box-shadow: #f6f6f6;
   border-radius: 20px;
   overflow: hidden;
-  margin: 0 auto; // Centre la bannière
+  margin: 0 auto;
   max-width: 90%;
 
   @media (max-width: variables.$mobile) {

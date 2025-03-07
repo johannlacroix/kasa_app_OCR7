@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import Layout from "../layout/Layout";
 
 const NotFound = () => {
   return (
-    <div className="content-wrapper">
+    <Layout>
       <div className="notFoundCtn">
         <h1 className="notFound">404</h1>
         <p className="notFoundText">
@@ -12,7 +13,7 @@ const NotFound = () => {
           Retourner sur la page d’accueil
         </Link>
       </div>
-    </div>
+    </Layout>
   );
 };
 

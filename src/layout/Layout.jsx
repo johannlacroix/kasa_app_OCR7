@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired, // Valide que children est un élément React
+  children: PropTypes.node.isRequired, // pr valider que children est 1 élément react
 };
 
 export default Layout;
