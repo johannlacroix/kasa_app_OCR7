@@ -90,13 +90,15 @@ body {
     padding: 5px 10px;
     border-radius: 10px;
     font-size: 0.9rem;
+		width:85px;
+		text-align: center;
   }
 
   @media (max-width: variables.$mobile) {
     .tag {
-      padding: 3px 6px;
+      padding: 4px 8px;
       font-size: 0.7rem;
-      border-radius: 8px;
+      border-radius: 10px;
     }
   }
 }
@@ -177,6 +179,12 @@ body {
 	justify-content: center;
 	gap: 80px;
 	margin-top: 25px;
+	
+
+	@media (max-width:variables.$mobile) {
+		flex-direction: column;
+		gap: 20px;
+	}
 }
 
 // Styles du carousel et des flèches
@@ -261,7 +269,7 @@ body {
     color: $primary-color;
     
 @media (max-width:variables.$mobile) {
-  font-size:0.8rem;
+  font-size:0.9rem;
 }
 
   }
@@ -272,8 +280,8 @@ body {
     border-radius: 50%;
 
 @media (max-width:variables.$mobile) {
-  width: 25px;
-    height: 25px;
+  width: 35px;
+    height: 35px;
 }
 
   }
