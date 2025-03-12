@@ -1,28 +1,37 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import FicheLogement from "./pages/FicheLogement";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
-import Gallery from "./components/Gallery/Gallery";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/logement/:id",
+    element: <FicheLogement />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/redirect-to-about", 
+    element: <Navigate to="/about" />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+]);
 
 const AppRouter = () => {
-  console.log("Router monté !");
-
-  return (
-    <Router>
-      <div className="wrapper">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/" element={<Gallery />} />
-          <Route path="/logement/:id" element={<FicheLogement />} />
-          <Route path="about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="home" element={<Home />} />
-          <Route path="/error" element={<NotFound />} />
-        </Routes>
-      </div>
-    </Router>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default AppRouter;

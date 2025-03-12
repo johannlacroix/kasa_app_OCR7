@@ -1,0 +1,70 @@
+@use "@/styles/variables" as variables;
+
+
+
+.carousel {
+    position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+  &Button {
+    position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: none;
+		border: none;
+		cursor: pointer;
+		width: 50px;
+		height: auto;
+
+        img {
+			width: 100%;
+			height: auto;
+		}
+
+		@media (max-width: variables.$mobile) {
+			width: 15px;
+			height: auto;
+		}
+  }
+
+  .leftArrow {
+    left: 20px;
+
+    @media (max-width: variables.$mobile) {
+        left: 10px;
+    }
+}
+
+.rightArrow {
+    right: 20px;
+
+    @media (max-width: variables.$mobile) {
+        right: 10px;
+    }
+}
+
+.image-logement {
+	width: 100%;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 20px;
+
+	@media (max-width: variables.$mobile) {
+		height: 255px;
+    width:100%;
+	}
+}
+
+  .image-count {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.2rem;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
+  }
+}

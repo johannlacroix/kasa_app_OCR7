@@ -363,9 +363,9 @@ body {
 	margin-bottom: 120px;
 	text-decoration: none;
 	font-weight: 500;
+	color: var(--bg-dark);
 
 	&:hover {
-		color: color.adjust($primary-color, $lightness: -10%);
 		text-decoration: underline;
 	}
 

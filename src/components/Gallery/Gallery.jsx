@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styles from "./Gallery.module.scss";
-// import Banner from "../Banner/Banner";
 import Card from "../Card/Card";
 import { Link } from "react-router-dom";
 
@@ -17,7 +16,6 @@ const Gallery = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("Annonces chargées :", data); // <-- Vérification
         setAnnonces(data);
       })
       .catch((error) =>
