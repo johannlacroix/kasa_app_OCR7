@@ -54,7 +54,7 @@ const FicheLogement = () => {
     );
   };
 
-  const isSingleImage = logement.pictures.length === 1; // Vérifie si le logement a une seule image
+  const isSingleImage = logement.pictures.length === 1; // Vérifier si logement a une seule image
 
   return (
     <Layout>
