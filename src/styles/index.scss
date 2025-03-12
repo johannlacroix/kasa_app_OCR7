@@ -55,6 +55,19 @@ body {
     width:100%;
 	}
 }
+
+.image-count {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 1.2rem;
+	color: white;
+	padding: 5px 10px;
+	border-radius: 5px;
+  }
+  
+
 .title {
 	color: $primary-color;
 	font-size: 1.6rem;

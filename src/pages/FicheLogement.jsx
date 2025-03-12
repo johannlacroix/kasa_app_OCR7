@@ -13,6 +13,7 @@ const FicheLogement = () => {
   const [error, setError] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
+
   useEffect(() => {
     fetch("/annonces.json")
       .then((response) => {
@@ -23,9 +24,7 @@ const FicheLogement = () => {
       })
       .then((data) => {
         const foundLogement = data.find((logement) => logement.id === id);
-        console.log("KJHFDKSJFHKJH", foundLogement);
         if (!foundLogement) {
-          console.log("XXXXXXXXXXXXX");
           navigate("/error");
           setLoading(false);
         } else {
@@ -55,28 +54,41 @@ const FicheLogement = () => {
     );
   };
 
+  const isSingleImage = logement.pictures.length === 1; // Vérifie si le logement a une seule image
+
   return (
     <Layout>
       <div className="fiche-logement">
         {/* Carrousel d'images */}
         <div className="carousel">
-          <Button
-            className="carouselButton leftArrow"
-            onClick={prevImage}
-            imgSrc="/logos_pictos/VectorL.png"
-            imgAlt="Flèche gauche"
-          />
+          {!isSingleImage && (
+            <>
+              <Button
+                className="carouselButton leftArrow"
+                onClick={prevImage}
+                imgSrc="/logos_pictos/VectorL.png"
+                imgAlt="Flèche gauche"
+              />
+              <Button
+                className="carouselButton rightArrow"
+                onClick={nextImage}
+                imgSrc="/logos_pictos/VectorR.png"
+                imgAlt="Flèche droite"
+              />
+            </>
+          )}
 
+        {/* Affichage de la numérotation des images */}
+        {!isSingleImage && (
+          <div className="image-count">
+            {currentImageIndex + 1}/{logement.pictures.length}
+          </div>
+        )}
+        
           <img
             className="image-logement"
             src={logement.pictures[currentImageIndex]}
             alt={logement.title}
-          />
-          <Button
-            className="carouselButton rightArrow"
-            onClick={nextImage}
-            imgSrc="/logos_pictos/VectorR.png"
-            imgAlt="Flèche droite"
           />
         </div>
 
